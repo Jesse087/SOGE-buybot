@@ -19,7 +19,7 @@ decimals = contract.functions.decimals().call()
 circulatingSupply = contract.functions.getCirculatingSupply().call()/10**decimals
 
 #INSERT BOT TOKEN FROM BOT FATHER AND YOUR GROUP ID
-bot = telebot.TeleBot("0x415201501bA8De0f81A29F346c240F68E59312DB", parse_mode="MARKDOWN")
+bot = telebot.TeleBot("5748867133:AAFqHSc7xcoxokUO9Xu8kh4ZaGDSZGPnB6U", parse_mode="MARKDOWN")
 group_id = -1001891062947
 buyBotVideo = "https://ibb.co/P1bx6c7"
 groupTG = "@Sogecommunitychat"
