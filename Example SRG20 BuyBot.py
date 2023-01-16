@@ -10,7 +10,7 @@ abi = json.loads('[{"inputs":[],"stateMutability":"nonpayable","type":"construct
 web3 = Web3(Web3.HTTPProvider("https://bscrpc.com"))
 
 #PUT YOUR TOKEN ADDRESS ONLY
-TokenAddress = "0xdB8068c80a618A8A27Cad29672FA89F30C0dA61c"
+TokenAddress = "0x415201501bA8De0f81A29F346c240F68E59312DB"
 
 contract_address = web3.toChecksumAddress(TokenAddress)
 
@@ -19,10 +19,10 @@ decimals = contract.functions.decimals().call()
 circulatingSupply = contract.functions.getCirculatingSupply().call()/10**decimals
 
 #INSERT BOT TOKEN FROM BOT FATHER AND YOUR GROUP ID
-bot = telebot.TeleBot("PUT_TOKEN_ID", parse_mode="MARKDOWN")
-group_id = -1001889082958
-buyBotVideo = "https://ibb.co/qkyf5Bh"
-groupTG = "@SpaceTaco_OG"
+bot = telebot.TeleBot("0x415201501bA8De0f81A29F346c240F68E59312DB", parse_mode="MARKDOWN")
+group_id = -1001891062947
+buyBotVideo = "https://ibb.co/P1bx6c7"
+groupTG = "@Sogecommunitychat"
 
 #latest Blocks and Txs
 latestBlock = web3.eth.block_number
@@ -48,10 +48,10 @@ while(True):
                 balance = contract.functions.balanceOf(event['args']['from']).call()/10**decimals;
                 bPos = "New!" if (balance-got)==0 else f'+{got/(balance-got):.0%}'
                 bot.send_video(chat_id= group_id,
-                                caption ="*TACO BUY!*\n"+
-                                "🌮" * min(math.ceil(buy/500),250)+"\n"+
+                                caption ="*SOGE BUY!*\n"+
+                                "⚡️" * min(math.ceil(buy/500),250)+"\n"+
                                 "*Spent:* "+ f'${dollarBuy:,.2f} ({buy:,.2f} SRG)\n'+
-                                f"*Got*: {got:,.2f} TACO\n" +
+                                f"*Got*: {got:,.2f} SOGE\n" +
                                 f"*Buyer Position:* {bPos}\n"+
                                 f'*Price:* ${price:,.5f} ({priceSRG:,.5f} SRG)\n'+
                                 f'*MCap:* ${marketCap:,.2f}\n'+
